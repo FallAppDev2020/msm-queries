@@ -1,0 +1,76 @@
+    <h1>
+  Movie #<%=@movdet.id%> details
+</h1>
+
+<a href="/movies" class="btn btn-block btn-outline-secondary">
+  Go back
+</a>
+
+&nbsp;|&nbsp;
+
+<a href="/delete_movie/<%=@movdet.id%>" class="btn btn-block btn-outline-secondary">
+  Delete movie
+  <small>(Building this link is not required. It's an optional stretch goal; but, you have the tools if you want to give it a try.)</small>
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Title
+  </dt>
+  <dd>
+    <%=@movdet.title%>
+  </dd>
+
+  <dt>
+    Year
+  </dt>
+  <dd>
+    <%=@movdet.year%>
+  </dd>
+
+  <dt>
+    Duration
+  </dt>
+  <dd>
+    <%=@movdet.duration%>
+  </dd>
+
+  <dt>
+    Description
+  </dt>
+  <dd>
+    <%=@movdet.description%>
+  </dd>
+
+  <dt>
+    Image
+  </dt>
+  <dd>
+    <%=@movdet.image%>
+  </dd>
+
+  <dt>
+    Director
+  </dt>
+  <dd>
+    <%=Director.where({ :id => @movdet.director_id}).at(0).name%>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%=time_ago_in_words(@movdet.created_at)%>
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+     <%=time_ago_in_words(@movdet.updated_at)%>
+  </dd>
+</dl>
+
+<hr>

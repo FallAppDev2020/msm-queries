@@ -10,8 +10,7 @@
     </td>
     <td><%= a_thing.title %></td>
     <td><%= a_thing.year %></td>
-    <%# Need to use instance variable that points to director.name for that specific director_id %>
-    <td><%= a_thing.director_id %></td>
+    <td><%=Director.where({ :id => a_thing.director_id}).at(0).name%></td>
     <td>
       <a href="/movies/<%= a_thing.id %>">Show details
     </a></td>
